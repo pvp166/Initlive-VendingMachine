@@ -1,0 +1,438 @@
+<html>
+
+<head>
+	<script type="text/javascript" src="./vendilator_lib.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<!-- The vending machine -->
+	<div class="grid-container">
+		<!-- the item in the vending machine-->
+		<div class="machine-item-grid-container">
+
+			<div class="grid-item">
+				<img src="A1.png" alt="Avatar">
+				<div class="price-container">
+					<div>A1</div>
+					<div>0.5</div>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="card">
+					<img src="A2.png" alt="Avatar">
+					<div class="price-container">
+						<div>A2</div>
+						<div>0.5</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="card">
+					<img src="A3.png" alt="Avatar">
+					<div class="price-container">
+						<div>A3</div>
+						<div>0.5</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="card">
+					<img src="A4.png" alt="Avatar">
+					<div class="price-container">
+						<div>A4</div>
+						<div>0.5</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="card">
+					<img src="A5.png" alt="Avatar">
+					<div class="price-container">
+						<div>A5</div>
+						<div>0.5</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="card">
+					<img src="B1.png" alt="Avatar">
+					<div class="price-container">
+						<div>B1</div>
+						<div>0.75</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="card">
+					<img src="B2.png" alt="Avatar">
+					<div class="price-container">
+						<div>B2</div>
+						<div>0.75</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="card">
+					<img src="B3.png" alt="Avatar">
+					<div class="price-container">
+						<div>B3</div>
+						<div>0.75</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="card">
+					<img src="B4.png" alt="Avatar">
+					<div class="price-container">
+						<div>B4</div>
+						<div>0.75</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="card">
+					<img src="B5.png" alt="Avatar">
+					<div class="price-container">
+						<div>B5</div>
+						<div>0.75</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="card">
+					<img src="C1.png" alt="Avatar">
+					<div class="price-container">
+						<div>C1</div>
+						<div>1.00</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="card">
+					<img src="C2.png" alt="Avatar">
+					<div class="price-container">
+						<div>C2</div>
+						<div>1.00</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="card">
+					<img src="C3.png" alt="Avatar">
+					<div class="price-container">
+						<div>C3</div>
+						<div>1.00</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="card">
+					<img src="C4.png" alt="Avatar">
+					<div class="price-container">
+						<div>C4</div>
+						<div>1.00</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="card">
+					<img src="C5.PNG" alt="Avatar">
+					<div class="price-container">
+						<div>C5</div>
+						<div>1.00</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="button-container">
+
+			<div class="item-button-list">
+				<!-- buttons to enter the rows -->
+				<div class="item-button" onclick="selectRow('A')">
+					<p>A</p>
+				</div>
+				<div class="item-button" onclick="selectRow('B')">
+					<p>B</p>
+				</div>
+				<div class="item-button" onclick="selectRow('C')">
+					<p>C</p>
+				</div>
+				<!-- buttons to enter the columns -->
+				<div class="item-button" onclick="selectColumn('1')">
+					<p>1</p>
+				</div>
+				<div class="item-button" onclick="selectColumn('2')">
+					<p>2</p>
+				</div>
+				<div class="item-button" onclick="selectColumn('3')">
+					<p>3</p>
+				</div>
+				<div class="item-button" onclick="selectColumn('4')">
+					<p>4</p>
+				</div>
+				<div class="item-button" onclick="selectColumn('5')">
+					<p>5</p>
+				</div>
+			</div>
+			<!-- buttons to enter the coins -->
+			<div class="money-slot-list">
+				<div class="money-slot" onclick="runningTotal(0.05)">
+					<img src="nickels.png" />
+					<button></button>
+				</div>
+				<div class="money-slot" onclick="runningTotal(0.10)">
+					<img src="dime.png" />
+					<button></button>
+				</div>
+				<div class="money-slot" onclick="runningTotal(0.25)">
+					<img src="quarter.png" />
+					<button></button>
+				</div>
+
+			</div>
+			<!-- running total -->
+			<div class="running-total-container">
+				<div id="item-number"><span id="item-row">X</span><span id="item-column">X</span></div>
+				<div id="running-total"> 0.00</div>
+				<div id="cancel-button" onclick="cancelOrder()">CANCEL</div>
+				<div id="vend-button" onclick="vendItem()">VEND</div>
+			</div>
+			<div class="error" id="error">Please enter an item number</div>
+			<div class="return-money-container">
+				<div class="information-box">Return money</div>
+				<div class="information-box" id="return-money">0.00</div>
+			</div>
+			<div class="coin-return-box">
+				<div class="information-box">0.05</div>
+				<div class="text">x</div>
+				<div class="information-box" id="nickels-number">0</div>
+				<div class="text">=</div>
+				<div class="information-box" id="nickels-total">0</div>
+				<div class="information-box">0.10</div>
+				<div class="text">x</div>
+				<div class="information-box" id="dime-number">0</div>
+				<div class="text">=</div>
+				<div class="information-box" id="dime-total">0</div>
+				<div class="information-box">0.25</div>
+				<div class="text">x</div>
+				<div class="information-box" id="quarter-number">0</div>
+				<div class="text">=</div>
+				<div class="information-box" id="quarter-total">0</div>
+			</div>
+		</div>
+		<div class="item-box">
+			<div class="return-tray" id="return-tray">
+
+			</div>
+
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		let row = 'X'; // row 
+		let column = 'X'; // column
+		let amountToReturn = 0; // total money return
+		function cancelOrder() {
+			document.getElementById("error").innerHTML = "Cancelled. See you again!!!";
+			calculateReturn();
+		}
+		// calculate total money
+		function vendItem() {
+			
+			if (row === 'X' || column === 'X') {
+
+				document.getElementById("error").innerHTML = "Please enter item number";
+				return
+			}
+			console.log("vend")
+			let paid = false;
+			if (row == "A") {
+				console.log("A")
+				if (amountToReturn < 0.5)
+					document.getElementById("error").innerHTML = "Please insert more money";
+				else {
+					
+					amountToReturn -= 0.5
+					paid = true;
+				}
+			}
+			if (row == "B") {
+				if (amountToReturn < 0.75)
+					document.getElementById("error").innerHTML = "Please insert more money";
+				else {
+					paid = true;
+					amountToReturn -= 0.75
+				}
+
+			}
+			if (row == "C") {
+				if (amountToReturn < 1)
+					document.getElementById("error").innerHTML = "Please insert more money";
+				else {
+					paid = true;
+					amountToReturn -= 1
+				}
+
+			}
+			if (paid === true) {
+				amountToReturn = parseFloat(amountToReturn).toFixed(2);
+				calculateReturn()
+			}
+
+		}
+		//calculate and return to main screen
+		function calculateReturn() {
+			let quarter = Math.floor(amountToReturn / 0.25);
+			let dime = Math.floor((amountToReturn - quarter * 0.25) / 0.1);
+			let nickels = Math.floor((amountToReturn - quarter * 0.25 - dime * 0.1).toFixed(2) / 0.05);
+			// update the screen after buy new item
+			document.getElementById("return-money").innerHTML = amountToReturn;
+			document.getElementById("running-total").innerHTML = 0.00;
+			document.getElementById("nickels-number").innerHTML = nickels;
+			document.getElementById("dime-number").innerHTML = dime;
+			document.getElementById("quarter-number").innerHTML = quarter;
+			document.getElementById("nickels-total").innerHTML = nickels * 0.05;
+			document.getElementById("dime-total").innerHTML = dime * 0.10;
+			document.getElementById("quarter-total").innerHTML = quarter * 0.25;
+
+			if (row !== 'X' && column !== 'X') {
+				
+				let img = document.createElement("img");
+				img.src = row + column + ".png";
+				img.id = "img";
+				let tray = document.getElementById("return-tray");
+				tray.style['background-color'] = "black";
+				tray.removeChild(tray.childNodes[0]);
+				tray.append(img);
+				
+				amountToReturn = 0.00;
+			}
+			// reset variable
+			row = 'X';
+			column = 'X';
+
+			document.getElementById("item-row").innerHTML = 'X';
+			document.getElementById("item-column").innerHTML = 'X';
+		}
+
+
+		let itemNumber = "";
+		init(null, document);
+		// select row
+
+		function selectRow(itemRow) {
+
+			document.getElementById("item-row").innerHTML = itemRow;
+			row = itemRow;
+		}
+		// select column
+		function selectColumn(itemColumn) {
+			document.getElementById("item-column").innerHTML = itemColumn;
+			column = itemColumn;
+		}
+		// calculate total
+		function runningTotal(amount) {
+			amountToReturn = parseFloat(amountToReturn)
+			amountToReturn += parseFloat(amount);
+			amountToReturn = amountToReturn.toFixed(2);
+			document.getElementById("running-total").innerHTML = amountToReturn;
+		}
+		// function readyToVend() {
+		
+			
+		// 	if (row !== 'X' && column !== 'X') {
+				
+		// 		vendItem();
+		// 		return
+		// 	}
+		// 	return
+		// }
+
+		// //main event loop for vending machine
+		// let vending = true;
+		// while (vending) {
+		// 	getInput();
+		// 	if (inputs[inputCall] === undefined) {
+		// 		break;
+		// 	}
+		// 	else {
+		// 		if (inputs[inputCall]["type"] === TYPE_BUTTON) {
+		// 			switch (inputs[inputCall]["value"]) {
+		// 				case "CANCEL":
+
+		// 					row = "X";
+		// 					column = "X";
+		// 					amountToReturn = 0;
+		// 					cancelOrder()
+		// 					print("Cancelled. See you again!!!")
+		// 					break;
+		// 				case "A":
+		// 					row = "A";
+		// 					readyToVend()
+		// 					break;
+		// 				case "B":
+		// 					// code block
+		// 					row = "B";
+		// 					readyToVend()
+		// 					break;
+		// 				case "C":
+		// 					row = "C";
+		// 					// code block
+		// 					readyToVend()
+		// 					break;
+		// 				case "1":
+							
+		// 					column = 1
+							
+		// 					readyToVend()
+		// 					break;
+		// 				case "2":
+		// 					column = 2
+							
+		// 					readyToVend()
+		// 					break;
+		// 				case "3":
+		// 					column = 3
+							
+		// 					readyToVend()
+		// 					break;
+		// 				case "4":
+		// 					column = 4
+							
+		// 					readyToVend()
+		// 					break;
+		// 				default:
+		// 					console.log("Nothing");
+		// 					break;
+		// 			}
+		// 		}
+		// 		if (inputs[inputCall]["type"] === TYPE_COIN) {
+		// 			amountToReturn += parseFloat(inputs[inputCall]["value"]);
+		// 			let runningTotal = "Running total " + amountToReturn
+		// 			print(runningTotal)
+		// 		}
+		// 	}
+		// }
+	</script>
+
+
+</body>
+
+</html>

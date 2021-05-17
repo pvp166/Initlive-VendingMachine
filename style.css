@@ -1,0 +1,220 @@
+.grid-container {
+	display: grid;
+	width: 60%;
+	grid-template-columns: 3fr 2fr;
+	background-color: #464e4e;
+	;
+	margin-left: auto;
+	margin-right: auto;
+	border: 0.1px solid black;
+}
+
+.machine-item-grid-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	padding: 20px;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.grid-item {
+	background-color: black;
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	padding: 2px;
+	font-size: 20px;
+	height: 170px;
+	color: rgba(255, 255, 255, 0.8);
+	text-align: center;
+}
+
+.grid-item img {
+	text-align: center;
+	width: 80px;
+	height: 120px;
+	margin-bottom: 30px;
+}
+
+.grid-item .price-container {
+	background-color: #3d3d3d;
+	width: 100%;
+	flex-wrap: nowrap;
+	display: flex;
+	justify-content: space-between;
+}
+
+.button-container {
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.8);
+	height: 90%;
+	margin-left: 3px;
+}
+
+.item-button-list {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	margin: 4px;
+	height: 10%;
+}
+
+.item-button {
+	border: 1px solid black;
+	background-color: #464e4e;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 20px;
+	cursor: pointer;
+
+}
+
+.machine-button-item {
+	height: 30px;
+}
+
+.money-slot-list {
+	display: grid;
+	margin: 4px;
+	margin-top: 20px;
+	height: 30%;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 10px;
+}
+
+.money-slot {
+	padding-top: 10px;
+	border: 0.1px solid black;
+	background-color: #d6dcdc;
+	text-align: center;
+	cursor: pointer;
+}
+
+.money-slot img {
+	width: 80px;
+	height: 80px;
+}
+
+.money-slot button {
+	margin-top: 10px;
+	width: 80px;
+	height: 3px;
+	background-color: black;
+}
+
+.running-total-container {
+	display: grid;
+	margin-top: 10px;
+	text-align: center;
+	grid-template-columns: 1fr 2fr 2fr 1fr;
+	width: 100%;
+}
+
+#item-number {
+	border: 0.1px solid black;
+	background-color: black;
+	margin-left: 2px;
+	margin-right: 2px;
+	color: #41d9d9;
+	text-shadow: 0 0 0.125em rgb(65 217 217 / 75%);
+	text-align: center;
+}
+
+#running-total {
+	border: 0.1px solid black;
+	background-color: black;
+	margin-left: 2px;
+	margin-right: 2px;
+	color: #41d9d9;
+	text-shadow: 0 0 0.125em rgb(65 217 217 / 75%);
+	text-align: center;
+}
+
+#vend-button {
+	border-radius: 2px;
+	border: 0.1px solid black;
+	background-color: #464e4e;
+	margin-left: 2px;
+	margin-right: 2px;
+	color: white;
+	text-align: center;
+	cursor: pointer;
+}
+
+#cancel-button {
+	border-radius: 2px;
+	border: 0.1px solid black;
+	background-color: #464e4e;
+	margin-left: 2px;
+	margin-right: 2px;
+	color: white;
+	text-align: center;
+	cursor: pointer;
+}
+
+.return-money-container {
+	display: grid;
+	margin-top: 30px;
+	text-align: center;
+	grid-template-columns: 1fr 1fr;
+	width: 80%;
+	padding-left: 10%;
+}
+
+.coin-return-box {
+	display: grid;
+	margin-top: 20px !important;
+	margin: 4px;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	text-align: center;
+}
+.coin-return-box .text{
+	padding-top: 4px;
+}
+.information-box {
+	margin-top: 5px;
+	border: 0.1px solid black;
+	background-color: #464e4e;
+	margin-left: 2px;
+	margin-right: 2px;
+	color: rgba(255, 255, 255, 0.8);
+
+	text-align: center;
+	padding: 0px;
+}
+
+.error {
+	margin-top: 10px;
+	background-color:  black;
+	color: red;
+	text-shadow: 0 0 0.125em red;
+	display: block;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+body {
+	background: #7acccc;
+	font-family: 'Dosis', 'Menlo', monospace;
+	font-size: 16px;
+}
+
+.item-box {
+	margin-top: 5px;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.8);
+	height: 100px;
+	margin-bottom: 30px;
+}
+
+.return-tray {
+	margin: 10px;
+	border: 1px solid black;
+	height: 80%;
+	background-color: #d6dcdc;
+}
+.return-tray img {
+	width: 80px;
+	height: 80px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
